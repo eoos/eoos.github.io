@@ -15,7 +15,8 @@ function hexToRgb(hex) {
 
 
 function setup() {
-  myCanvas = createCanvas(windowWidth, windowHeight);
+  // myCanvas = createCanvas(windowWidth, windowHeight);
+  myCanvas = createCanvas(windowWidth*0.99, windowHeight*1.1);
 
   var x = 0;
   for (var i = 0; i <= width*2 / options.Size; i++) {          

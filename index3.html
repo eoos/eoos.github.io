@@ -14,10 +14,9 @@
   <link rel="stylesheet" type="text/css" href="fonts.css">
 
   <script type="text/javascript" src="js/dat.gui.min.js"></script>
-  <script src="https://cdn.bootcss.com/p5.js/0.9.0/p5.min.js"></script>
-  <script src="https://cdn.bootcss.com/p5.js/0.9.0/addons/p5.dom.min.js"></script>
-  <script type="text/javascript" src="js/sketch.js"></script>
-
+  <script type="text/javascript" src="js/p5.min.js"></script>
+  <script type="text/javascript" src="js/p5.dom.min.js"></script>
+  
   <style type="text/css">
     *{
       margin:0;
@@ -41,17 +40,11 @@
       bottom: 80px;
       left: 50px;
       color: #ffffff;
+      /* max-width: 70%; */
+      width: 100vw;
       line-height: 20px;
       opacity: 0.7;
     }
-    .text:before {
-      content: url(./image/zhihu.png);
-      position: absolute;
-      transform: translate(-9px, 21px);
-      width: 20px;
-      height: 20px;
-    }
-
   </style>
 </head>
 
@@ -61,7 +54,7 @@
   <a href = "https://x-jq.cn">
     <img src="logo.png" style ="width: 100px">
   </a>
-  <div style="margin-left:50px;" class="text">炫技巧 | 后PC时代的玩法</div>
+  <div style="position: absolut; display: flex; right: -185px;">写几个字试试</div>
 </div>
 
 
@@ -69,18 +62,18 @@
 <script type="text/javascript">
 
   var type;
-  var options ={
+  var options ={  
     Background : '#0a0a0a',
     Color : '#01FF45',
     Opacity: 150,
     Unicode : 'Text',
-    DropSpeed : 2,
-    TextSpeed : 3,
-    Size : 18,
+    DropSpeed : 2,  
+    TextSpeed : 3,  
+    Size : 14,
     Direction : '↓',
     RotateAngle: 45,
     Text : "炫-…技-巧*",
-    Random: function () {
+    Random: function () { 
       var Color = random(['#03F9FF','#FFE003','#ffffff','#FF039F']);
       color1Control.setValue(Color);
 
@@ -119,7 +112,7 @@
 
   SizeControl = folder1.add(options, 'Size',8,20);
   SizeControl.onChange(draw);
-
+ 
 
   SpeedControl = folder1.add(options, 'DropSpeed',0,20);
   SpeedControl.onChange(draw);
@@ -132,17 +125,17 @@
   DirectionControl = folder1.add(options, 'Direction',['↓', '↑','→','←','freeAngle'] );
   DirectionControl.onChange(setup);
   DirectionControl.onChange(draw);
-
+ 
   RotateControl = folder1.add(options, 'RotateAngle',0,360);
   RotateControl.onChange(setup);
   RotateControl.onChange(draw);
-
+ 
 
   UnicodeControl = folder1.add(options, 'Unicode',['Katakana', 'Braille','BoxDrawing','CJK Radicals Supplement','Kanbun','Yi Syllables','Text'] );
   UnicodeControl.onChange(Symbol);
+ 
 
-
-  var textControl = folder1.add(options, 'Text');
+  var textControl = folder1.add(options, 'Text'); 
   textControl.onChange(function(){
     type='text';
     draw();
@@ -155,9 +148,9 @@
 
   var SaveControl = folder1.add(options, 'Save');
 
-
+  
   folder1.open();
-
+  
 
 };
 
@@ -175,6 +168,7 @@ function rgbToHex(r, g, b) {
 
 </script>
 
+<script type="text/javascript" src="js/sketch.js"></script>
 </body>
 
 </html>
